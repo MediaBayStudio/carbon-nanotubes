@@ -1,3 +1,43 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-hero {
+  padding-bottom: 40px;
+  &__pic {
+    margin: auto;
+    width: 82%;
+    display: block;
+  }
+
+  &__text {
+  }
+
+  &__top-text {
+  }
+
+  &__title {
+    margin: 0 0 20px;
+    font: bold 42px/1.2 $mainFont;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+  }
+
+  &__descr {
+  }
+
+  &__links {
+    margin: 35px 0 0;
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    width: calc(50% - 7.5px);
+    height: 52px;
+    &:first-child {
+      margin: 0 15px 0 0;
+    }
+    &:last-child {}
+  }
+}

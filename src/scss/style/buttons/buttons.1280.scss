@@ -2,3 +2,15 @@
 @import '../../assets/colors';
 @import '../../assets/mixins';
 @import '../../assets/variables';
+
+
+.btn {
+  font-size: 18px;
+}
+
+.btn-whitepaper {
+  &::after {
+    width: 22px;
+    height: 18px;
+  }
+}

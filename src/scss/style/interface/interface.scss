@@ -4,8 +4,9 @@
 @import '../../assets/variables';
 
 body {
-  // font: 14px/1.4 serif;
-  // color: $black;
+  font: 14px/1.5 $mainFont;
+  color: $white;
+  background: $black;
   // no-scroll is added by open mobile-menu or popups
   &.no-scroll {
     overflow: hidden;
@@ -110,6 +111,17 @@ body {
 
 // Sections
 .sect {
+  &-top-text {
+    margin: 0 0 15px;
+    display: block;
+    background: $text_gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    font: 16px/1.5 $mainFont;
+    letter-spacing: 0.05em;
+  }
   &-bg {}
 
   &-title {}

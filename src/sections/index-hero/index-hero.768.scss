@@ -1,3 +1,35 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-hero {
+  // padding-top: 140px;
+  // display: flex;
+  // flex-flow: row-reverse;
+  &__pic {
+    // margin: -80px 0 0 0;
+    // flex-shrink: 0;
+    // width: 50%;
+    // pointer-events: none;
+  }
+
+  &__text {
+  }
+
+  &__top-text {
+  }
+
+  &__title {
+  }
+
+  &__descr {
+  }
+
+  &__links {
+  }
+
+  &__link {
+    &:first-child {}
+    &:last-child {}
+  }
+}

@@ -2,14 +2,58 @@
 @import '../../assets/colors';
 @import '../../assets/mixins';
 @import '../../assets/variables';
+
 .btn {
-  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+  font: 12px/1 $mainFont;
+  border-radius: 5px;
+  position: relative;
 }
 
-.btn-blue {
+.btn-gradient {
+  background: $gradient;
+}
 
+.btn-grey {
+  background: $grey;
 }
 
 .btn-ol {
+  background: transparent;
+}
 
+.btn-ol-gradient {
+  &::before {
+    content:"";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: inherit;
+    background: $gradient;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+  }
+}
+
+.btn-whitepaper {
+  &::after {
+    content: '';
+    flex-shrink: 0;
+    margin: 0 0 0 10px;
+    width: 16px;
+    height: 14px;
+    background: center / contain no-repeat;
+  }
+  &.lazyloaded,
+  &:not(.lazy) {
+    &::after {
+      background-image: url('img/icon-arrow-download.svg');
+    }
+  }
 }

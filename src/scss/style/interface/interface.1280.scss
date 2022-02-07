@@ -1,4 +1,19 @@
-
 @import '../../assets/colors';
 @import '../../assets/mixins';
 @import '../../assets/variables';
+
+body {
+  font-size: 16px;
+}
+
+// Sections
+.sect {
+  &-top-text {
+    font-size: 22px;
+  }
+  &-bg {}
+
+  &-title {}
+
+  &-descr {}
+}

@@ -1,1 +1,1 @@
-@charset "UTF-8";
+@charset "UTF-8";.index-hero{padding-top:140px;display:flex;flex-flow:row-reverse;overflow:hidden}.index-hero__pic{margin:-180px -120px 0 0;flex-shrink:0;width:775px;pointer-events:none}.index-hero__title{margin:0 0 50px;font-size:64px}.index-hero__links{margin:50px 0 0}.index-hero__link{height:62px}.index-hero__link:first-child{margin:0 40px 0 0;width:232px}.index-hero__link:last-child{width:214px}
