@@ -117,6 +117,43 @@ body {
   &-descr {}
 }
 
+.telegram {
+  &.lazyloaded,
+  &:not(.lazy) {
+    background-image: url('img/icon-telegram.svg');
+  }
+}
+.twitter {
+  &.lazyloaded,
+  &:not(.lazy) {
+    background-image: url('img/icon-twitter.svg');
+  }
+}
+.reddit {
+  &.lazyloaded,
+  &:not(.lazy) {
+    background-image: url('img/icon-reddit.svg');
+  }
+}
+.youtube {
+  &.lazyloaded,
+  &:not(.lazy) {
+    background-image: url('img/icon-youtube.svg');
+  }
+}
+.facebook {
+  &.lazyloaded,
+  &:not(.lazy) {
+    background-image: url('img/icon-facebook.svg');
+  }
+}
+.tiktok {
+  &.lazyloaded,
+  &:not(.lazy) {
+    background-image: url('img/icon-tiktok.svg');
+  }
+}
+
 // Standart messages of CF7
 div.wpcf7-response-output,
 span.wpcf7-not-valid-tip,

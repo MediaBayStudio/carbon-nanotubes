@@ -12,6 +12,10 @@ let { src, dest, watch, series, parallel, task } = require('gulp'),
 
   shell = require('gulp-shell'),
 
+  imagemin = require('gulp-imagemin'),
+  svgmin = require('gulp-svgmin'),
+  webp = require('gulp-webp'),
+
   srcPath = './src',
   config = require('./scripts/config.js'),
   wordpress = config.wordpress,
@@ -169,10 +173,38 @@ task('default', function(done) {
     watch(path.join(config.src.path, '*.html'), moveHTML);
   }
 
-  console.log(path.join(config.src.img, '**', '*'));
+  let imageProcessing = function(filepath, event) {
+    const filetype = path.parse(filepath).ext.slice(1);
+    switch (filetype) {
+      case 'jpeg':
+      case 'jpg':
+      case 'png':
+        src(filepath, { allowEmpty: true })
+        .pipe(webp())
+        .pipe(dest(config.dest.img));
+        src(filepath, { allowEmpty: true })
+        .pipe(imagemin())
+        .pipe(dest(config.dest.img));
+        console.log('File ' + filepath + ' was ' + event + ', webped and minified');
+        break;
+      case 'svg':
+        src(filepath, { allowEmpty: true })
+        // .pipe(svgmin())
+        .pipe(dest(config.dest.img));
+        console.log('File ' + filepath + ' was ' + event + ' and minified');
+        break;
+    }
+  }
 
+  watch(path.join(config.src.img, '**', '*'), moveImages)
+  .on('add', filepath => imageProcessing(filepath, 'added'))
+  .on('change', filepath => imageProcessing(filepath, 'changed'));
+  // .on('unlink', function(filepath) {
+  //   const filetype = path.parse(filepath).ext.slice(1);
+  //   console.log(filetype);
+  //   console.log('removed');
+  // });
   watch(path.join(config.src.fonts, '**', '*'), moveFonts);
-  watch(path.join(config.src.img, '**', '*'), moveImages);
   watch(path.join(config.src.path, '**', '*.json'), moveJSON);
 });
 

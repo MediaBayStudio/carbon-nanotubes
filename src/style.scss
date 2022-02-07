@@ -6,6 +6,14 @@ Author URI: https://media-bay.ru/
 Version: 1.0
 */
 
+#wpadminbar {
+  display: none !important;
+}
+
+html[lang] {
+  margin-top: 0 !important;
+}
+
 @import 'scss/assets/animations';
 @import 'scss/assets/fonts';
 @import 'scss/assets/grid';

@@ -19,20 +19,19 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   fakeScrollbar = id('fake-scrollbar');
+  hdr = q('.hdr');
+  burger = q('.hdr__burger', hdr);
 
-  // burger = q('.hdr__burger');
-
-  // hdr = q('.hdr');
-
-  // menu = mobileMenu({
-  //   menu: q('.menu'),
-  //   menuCnt: q('.menu__cnt'),
-  //   openBtn: burger,
-  //   closeBtn: burger,
-  //   toRight: true,
-  //   fade: false,
-  //   allowPageScroll: false
-  // });
+  menu = mobileMenu({
+    menu: q('.menu', hdr),
+    menuCnt: q('.menu__cnt', hdr),
+    openBtn: burger,
+    closeBtn: q('.menu__close', hdr),
+    toRight: true,
+    fade: false,
+    allowPageScroll: false
+  });
+  menu.open();
 
   // let navLinks = qa('.nav-link, .hdr__callback');
 

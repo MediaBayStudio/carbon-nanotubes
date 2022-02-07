@@ -47,11 +47,11 @@ add_action( 'wp_enqueue_scripts', function() {
 	$scripts = ['svg4everybody.min.js', 'slick.min.js', 'lazy.min.js', 'Popup.min.js', 'script.js'];
 
   if ( $GLOBALS['page_script_name'] ) {
-    $scripts[] = $GLOBALS['page_script_name'];
+    $scripts[] = $GLOBALS['page_script_name'] . '.js';
   }
 
   foreach ( $scripts as $script ) {
-    wp_enqueue_script( "{$script}", $template_directory_uri . "/js/{$script}.js", [], null );
+    wp_enqueue_script( "{$script}", "{$template_directory_uri}/js/{$script}", [], null );
   }
 
   // Отключаем стандартные jquery, jquery-migrate
@@ -60,7 +60,7 @@ add_action( 'wp_enqueue_scripts', function() {
   wp_deregister_script( 'jquery' );
 
   // Подключаем свой jquery
-  wp_register_script( 'jquery-core', $template_directory_uri . '/js/jquery-3.5.1.min.js', false, null, true );
+  wp_register_script( 'jquery-core', "{$template_directory_uri}/js/jquery-3.5.1.min.js", false, null, true );
   wp_register_script( 'jquery', false, ['jquery-core'], null, true );
   wp_enqueue_script( 'jquery' );
 

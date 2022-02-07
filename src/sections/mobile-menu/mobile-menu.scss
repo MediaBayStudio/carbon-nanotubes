@@ -1,3 +1,99 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.menu {
+  width: 100%;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  max-height: 100vh;
+  max-height: calc(var(--vh, 1vh) * 100);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .5s, visibility .5s;
+  background: transparentize($violet, .7);
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__cnt {
+    padding: 0 20px 10vh;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    background: $black;
+    color: $white;
+  }
+
+  &__hdr {
+    margin: 0 0 32px;
+    padding: 18px 0;
+    // width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {}
+
+  &__logo-img {
+    object-fit: contain;
+  }
+
+  &__nav {
+    &-list {
+      display: flex;
+      flex-flow: column;
+      align-items: flex-start;
+      font: 28px/1.3 $mainFont;
+    }
+    &-li {
+      margin: 0 0 20px;
+    }
+  }
+
+  &__close {
+    margin: 0 0 0 auto;
+    &::before {
+      content: '';
+      display: block;
+      padding: 1px;
+      width: 20px;
+      height: 20px;
+      background: center / contain no-repeat;
+    }
+    &.lazyloaded,
+    &:not(.lazy) {
+      &::after,
+      &::before{
+        background-image: url('../img/icon-close.svg');
+      }
+    }
+  }
+
+  &__close-svg {}
+
+  &__close-path {}
+
+  &__links {
+    margin: auto 0 0;
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    width: 30px;
+    height: 30px;
+    background: center / contain no-repeat;
+    &:nth-last-child(n+2) {
+      margin: 0 10px 0 0;
+    }
+  }
+
+}

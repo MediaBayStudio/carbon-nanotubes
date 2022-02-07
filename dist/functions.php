@@ -16,14 +16,20 @@ $upload_basedir = $upload_dir['basedir'] . DIRECTORY_SEPARATOR;
  */
 $upload_baseurl = $upload_dir['baseurl'] . DIRECTORY_SEPARATOR;
 
-// $address = get_option( 'contacts_address' );
 // $tel = get_option( 'contacts_tel' );
 // $tel_clean = preg_replace( '/\s/', '', $tel );
-// $email = get_option( 'contacts_email' );
-// $insta = get_option( 'contacts_insta' );
 
-$logo_id = get_theme_mod( 'custom_logo' );
-$logo_url = wp_get_attachment_url( $logo_id );
+$address = get_option( 'contacts_address' );
+$email = get_option( 'contacts_email' );
+$telegram = get_option( 'contacts_telegram' );
+$twitter = get_option( 'contacts_twitter' );
+$reddit = get_option( 'contacts_reddit' );
+$youtube = get_option( 'contacts_youtube' );
+$facebook = get_option( 'contacts_facebook' );
+$tiktok = get_option( 'contacts_tiktok' );
+
+// $logo_id = get_theme_mod( 'custom_logo' );
+$logo_url = "{$template_directory_uri}/img/logo.svg";
 
 /**
  * @var (bool) $webp_support

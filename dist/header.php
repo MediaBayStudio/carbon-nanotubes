@@ -1,15 +1,29 @@
 <?php
 global
   $webp_support,
-  // $address,
-  // $address_link,
-  // $email,
-  // $tel,
-  // $tel_clean,
+  $address,
+  $address_link,
+  $email,
+  $telegram,
+  $twitter,
+  $reddit,
+  $youtube,
+  $facebook,
+  $tiktok,
   $site_url,
   $logo_url,
   $template_directory,
   $template_directory_uri;
+
+
+$social_media_links = [
+  'telegram' => $telegram,
+  'twitter' => $twitter,
+  'reddit' => $reddit,
+  'youtube' => $youtube,
+  'facebook' => $facebook,
+  'tiktok' => $tiktok
+];
 
 $preload = [ $logo_url ];
 
@@ -77,7 +91,11 @@ $GLOBALS['page_style_name'] = $style_name ?>
     <!-- </noindex> -->
   </noscript>
   <div id="page-wrapper">
-    <header class="hdr container"> <?php
+    <header class="hdr container">
+      <a href="<?php echo $site_url ?>" class="hdr__logo" title="Go to front page">
+        <img src="<?php echo $logo_url ?>" alt="logotype" class="hdr__logo-img">
+      </a>
+      <button type="button" class="hdr__burger"></button> <?php
       wp_nav_menu([
         'theme_location'  => 'header_menu',
         'container'       => 'nav',

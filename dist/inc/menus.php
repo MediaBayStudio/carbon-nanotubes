@@ -2,15 +2,21 @@
 // Меню на сайте
   add_action( 'after_setup_theme', function() {
     register_nav_menus( [
-      'header_menu' =>  'Меню в шапке сайта',
-      // 'mobile_menu' =>  'Мобильное меню на сайте',
-      // 'footer_menu' =>  'Меню в подвале сайта'
+      'header_menu' =>  'Header menu',
+      // 'mobile_menu' =>  'Mobile menu',
+      // 'footer_menu' =>  'Footer menu'
     ] );
   } );
 
 // добавить класс для ссылки в меню (a)
   add_filter( 'nav_menu_link_attributes', function( $atts, $item ) {
+    global $site_url;
     $atts['class'] = 'nav-link';
+    if ( $item->title === 'Whitepaper' ) {
+      $atts['href'] = $site_url . '/whitepaper.pdf';
+    } elseif ( $item->title === 'FAQ' ) {
+      $atts['href'] = $site_url . '/#faq';
+    }
     return $atts;
   }, 10, 2);  
 
@@ -26,10 +32,10 @@
       // case 'ftr__nav':
       //   $li_class = 'ftr__nav-li';
       //   break;
-      // case 'menu__nav':
-      //   $li_class = 'menu__nav-li';
-      //   break;
-      // default:
+      case 'menu__nav':
+        $li_class = 'menu__nav-li';
+        break;
+      default:
         $li_class = 'nav__li';
         break;
     }
