@@ -13,7 +13,12 @@ body {
   &-top-text {
     font-size: 22px;
   }
-  &-bg {}
+  &-bg {
+    margin-top: $sectionVerticalPadding1280;
+    margin-bottom: $sectionVerticalPadding1280;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
 
   &-title {
     font-size: 48px;

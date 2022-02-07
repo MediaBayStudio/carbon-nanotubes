@@ -42,6 +42,10 @@
   }
 }
 
+.btn-ol-white {
+  border: 1px solid $white;
+}
+
 .btn-whitepaper {
   &::after {
     content: '';
