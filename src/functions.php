@@ -12,9 +12,9 @@ $upload_dir = wp_get_upload_dir();
 $upload_basedir = $upload_dir['basedir'] . DIRECTORY_SEPARATOR;
 
 /**
- * @var (string) $upload_baseurl http://site.com/wp-content/uploads/
+ * @var (string) $upload_baseurl http://site.com/wp-content/uploads
  */
-$upload_baseurl = $upload_dir['baseurl'] . DIRECTORY_SEPARATOR;
+$upload_baseurl = $upload_dir['baseurl'];
 
 // $tel = get_option( 'contacts_tel' );
 // $tel_clean = preg_replace( '/\s/', '', $tel );

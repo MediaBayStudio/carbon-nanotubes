@@ -1,3 +1,70 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-perspective {
+
+  &__top-text {}
+
+  &__title {}
+
+  &__items {
+    margin: -60px 0 0;
+  }
+
+  &__item {
+    margin: 120px 0 0;
+    align-items: center;
+    &-pic {
+      flex-shrink: 0;
+      width: 590px;
+      height: 420px;      
+    }
+
+    &-img {}
+
+    &-text {
+      max-width: 405px;
+    }
+
+    &-title {
+      font-size: 22px;
+    }
+
+    &-descr {}
+    
+    &.odd {
+      flex-flow: row;
+      .index-perspective__item-pic {
+        margin: 0 125px 0 0;
+      }
+
+      .index-perspective__item-img {}
+
+      .index-perspective__item-text {}
+
+      .index-perspective__item-title {}
+
+      .index-perspective__item-descr {}
+    }
+    &.even {
+      flex-flow: row-reverse;
+      .index-perspective__item-pic {
+        margin: 0 0 0 125px;
+      }
+
+      .index-perspective__item-img {}
+
+      .index-perspective__item-text {}
+
+      .index-perspective__item-title {}
+
+      .index-perspective__item-descr {}
+    }
+  }
+  &__link {
+    margin-top: 90px;
+    width: 173px;
+    height: 61px;
+  }
+}

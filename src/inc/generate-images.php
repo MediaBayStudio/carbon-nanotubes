@@ -19,41 +19,7 @@ foreach ( $image_sizes as $size_name => $width ) {
   add_image_size( $size_name, $width, $height, true );
 }
 
-add_action( 'wp_generate_attachment_metadata', function ( $image_meta, $img_id ) {
-  global $image_sizes;
-
-  $img_path = get_attached_file( $img_id );
-  $img_pathinfo = pathinfo( $img_path );
-  $dirname = $img_pathinfo['dirname'];
-
-  $upload_dir = preg_replace( '/.*uploads/', '', $dirname );
-
-  foreach ( $image_sizes as $size_name => $width ) {
-    $file = image_get_intermediate_size( $img_id, $size_name );
-    $file_webp = str_replace( ['.jpg', '.jpeg', '.png'], '', $file['file'] );
-    $file_webp_name = $file_webp . '.webp';
-    $webp_path = $upload_dir . DIRECTORY_SEPARATOR . $file_webp_name;
-
-    $cwebp = '/usr/local/bin/cwebp -q 90 ' . $file['file'] . ' -o ' . $file_webp_name;
-
-    update_post_meta( $img_id, $size_name . '_webp', $webp_path );
-
-    chdir( $dirname );
-    exec( $cwebp );
-  }
-
-  $webp_name = $img_pathinfo['filename'] . '.webp';
-  $webp_path = $upload_dir . DIRECTORY_SEPARATOR . $webp_name;
-
-  $cwebp = '/usr/local/bin/cwebp -q 90 ' . $img_pathinfo['basename'] . ' -o ' . $webp_name;
-
-  chdir( $dirname );
-  exec( $cwebp );
-  minify_img( $img_path );
-  update_post_meta( $img_id, 'webp', $webp_path );
-
-  return $image_meta;
-}, 10, 3 );
+add_action( 'wp_generate_attachment_metadata', 'generate_webp', 10, 3 );
 
 add_action( 'delete_attachment', function( $img_id, $img ) {
   global $upload_basedir;
@@ -72,6 +38,42 @@ add_action( 'delete_attachment', function( $img_id, $img ) {
   }
 
 }, 10, 2 );
+
+function generate_webp( $image_meta, $img_id ) {
+  global $image_sizes;
+
+  $img_path = get_attached_file( $img_id );
+  $img_pathinfo = pathinfo( $img_path );
+  $dirname = $img_pathinfo['dirname'];
+
+  $upload_dir = preg_replace( '/.*uploads/', '', $dirname );
+
+  foreach ( $image_sizes as $size_name ) {
+    $file = image_get_intermediate_size( $img_id, $size_name );
+    $file_webp = str_replace( ['.jpg', '.jpeg', '.png'], '', $file['file'] );
+    $file_webp_name = $file_webp . '.webp';
+    $webp_path =  $upload_dir . DIRECTORY_SEPARATOR . $file_webp_name;
+
+    $cwebp = '/usr/local/bin/cwebp -q 90 ' . $file['file'] . ' -o ' . $file_webp_name;
+
+    update_post_meta( $img_id, $size_name . '_webp', $webp_path );
+
+    chdir( $dirname );
+    exec( $cwebp );
+  }
+
+  $webp_name = $img_pathinfo['filename'] . '.webp';
+  $webp_path =  $upload_dir . DIRECTORY_SEPARATOR . $webp_name;
+
+  $cwebp = '/usr/local/bin/cwebp -q 90 ' . $img_pathinfo['basename'] . ' -o ' . $webp_name;
+
+  chdir( $dirname );
+  exec( $cwebp );
+  minify_img( $img_path );
+  update_post_meta( $img_id, 'webp', $webp_path );
+
+  return $image_meta;
+}
 
 
 function minifyImg( $src, $dest = null, $quality = 9 ) {

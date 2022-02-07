@@ -1,3 +1,41 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-perspective {
+
+  &__top-text {}
+
+  &__title {}
+
+  &__items {}
+
+  &__item {
+    &-pic {}
+
+    &-img {}
+
+    &-title {}
+
+    &-descr {}
+    
+    &.odd {
+      .index-perspective__item-pic {}
+
+      .index-perspective__item-img {}
+
+      .index-perspective__item-title {}
+
+      .index-perspective__item-descr {}
+    }
+    &.even {
+      .index-perspective__item-pic {}
+
+      .index-perspective__item-img {}
+
+      .index-perspective__item-title {}
+
+      .index-perspective__item-descr {}
+    }
+  }
+}
