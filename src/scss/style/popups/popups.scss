@@ -1,0 +1,99 @@
+
+@import '../../assets/colors';
+@import '../../assets/mixins';
+@import '../../assets/variables';
+.popup {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .5s, visibility .5s;
+  overflow: auto;
+  z-index: 5;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__cnt {
+    // Popup inside
+    background-color: #fff;
+    color: #000;
+    position: relative;
+  }
+
+  // START close btn
+  &__close {
+    &:active {
+      transform: scale(.95);
+    }
+  }
+  // START close btn (pure css)
+  &__close {
+    display: block;
+    padding: 2.5px;
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    transition: color .5s;
+
+    &:hover {
+      // color: $color;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100.45%;
+      height: 1px;
+      background: currentColor;
+      pointer-events: none;
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+  // END close btn (pure css)
+  // START close btn (svg)
+  &__close {
+    // width: 17.5px;
+    // height: 17.5px;
+    // padding: 2.5px;
+    // transition: color .4s;
+
+    // &__svg {
+    //   pointer-events: none;
+    //   width: 100%;
+    //   height: 100%;
+    // }
+
+    // &__rect {
+    //   width: 19px;
+    //   height: 2px;
+    //   fill: currentColor;
+    // }
+  }
+  // END close btn (svg)
+  // END close btn
+
+  &__title {}
+
+  &__descr {}
+}

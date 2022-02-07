@@ -1,0 +1,125 @@
+
+@import '../../assets/colors';
+@import '../../assets/mixins';
+@import '../../assets/variables';
+
+body {
+  // font: 14px/1.4 serif;
+  // color: $black;
+  // no-scroll is added by open mobile-menu or popups
+  &.no-scroll {
+    overflow: hidden;
+  
+    .hdr.fixed {
+      overflow-y: scroll;
+    }
+  }
+}
+
+// Page wrapper
+#page-wrapper {
+  display: flex;
+  flex-flow: column;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+// Elements with loader
+.loading {
+  opacity: 0.5;
+  pointer-events: none;
+  
+  .loader {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+
+// img.lazy {
+//   background: url('../img/img-placeholder.svg') center/cover no-repeat;
+// }
+
+// a[href="#"] {
+//   opacity: .5;
+//   pointer-events: none;
+// }
+
+/* START loader */
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .5s, visibility .5s;
+  pointer-events: none;
+
+  &__circle {
+    margin: auto;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    animation: spin .5s linear infinite;
+  }
+
+  // START white loader
+  &-white {
+    // background: $color;
+    >.loader__circle {
+      // border-top-color: $color;
+      // border-left-color: $color;
+    }
+  }
+  // END white loader
+}
+/* END loader */
+
+// CF7 Honeypot field
+.cf7-form-field {
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0;
+  position: absolute;
+}
+
+// Блок с прокруткой, который показывается на всю ширину и высоту страницы страницы
+// нужен для незаметного overflow:hidden у body
+// при вызове мобильного меню или попапов
+#fake-scrollbar {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  z-index: 9999;
+  pointer-events: none;
+  &.active {
+    display: block;
+  }
+}
+
+// Sections
+.sect {
+  &-bg {}
+
+  &-title {}
+
+  &-descr {}
+}
+
+// Standart messages of CF7
+div.wpcf7-response-output,
+span.wpcf7-not-valid-tip,
+.screen-reader-response {
+  display: none !important;
+}
