@@ -1,3 +1,28 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.ftr {
+  padding-top: $sectionVerticalPadding320;
+  padding-bottom: 30px;
+  text-align: center;
+
+  &__links {
+    margin: 0 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__link {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    &:nth-last-child(n+2) {
+      margin: 0 10px 0 0;
+    }
+  }
+
+  &__copy {
+  }
+}

@@ -1,3 +1,16 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.ftr {
+
+  &__links {
+  }
+
+  &__link {
+    &:nth-last-child(n+2) {}
+  }
+
+  &__copy {
+  }
+}

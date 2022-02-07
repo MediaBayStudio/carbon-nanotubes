@@ -1,15 +1,18 @@
       <?php
         global 
-          $site_url,
-          $template_directory_uri ?>
-      <footer class="ftr container"> <?php 
-        // wp_nav_menu( [
-        //   'theme_location'  => 'footer_menu',
-        //   'container'       => 'nav',
-        //   'container_class' => 'ftr__nav',
-        //   'menu_class'      => 'ftr__nav-list',
-        //   'items_wrap'      => '<ul class="%2$s">%3$s</ul>'
-        // ] ) ?>
+          $social_media_links ?>
+      <footer class="ftr container"> <?php
+        if ( !is_front_page() ) : ?>
+          <div class="ftr__links"> <?php
+            foreach ( $social_media_links as $name => $url ) :
+              if ( $url ) : ?>
+                <a href="<?php echo $url ?>" class="ftr__link <?php echo $name ?>" target="_blank"></a> <?php
+              endif;
+            endforeach;
+            unset( $name, $url ) ?>
+          </div> <?php
+        endif ?>
+        <span class="ftr__copy">&copy; All rights reserved</span>
       </footer>
       <div id="fake-scrollbar"></div> <?php
       wp_footer() ?>
