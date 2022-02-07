@@ -8,12 +8,16 @@ body {
 
 // Sections
 .sect {
+  padding-top: $sectionVerticalPadding1280;
+  padding-bottom: $sectionVerticalPadding1280;
   &-top-text {
     font-size: 22px;
   }
   &-bg {}
 
-  &-title {}
+  &-title {
+    font-size: 48px;
+  }
 
   &-descr {}
 }

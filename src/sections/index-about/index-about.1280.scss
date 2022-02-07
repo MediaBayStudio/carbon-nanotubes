@@ -1,3 +1,47 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-about {
+  background-position: center;
+  &.lazyloaded,
+  &:not(.lazy) {
+    background-image: url('../img/honeycomb-bg-desktop.svg');
+  }
+  &__top-text {
+  }
+
+  &__title {
+  }
+
+  &__properties {
+    margin: 150px 0 258px;
+    flex-flow: row;
+  }
+
+  &__property {
+    width: 225px;
+
+    &::before {
+      width: 325px;
+      height: 325px;
+    }
+    
+    &:first-child {
+      margin: 0 0 0 187px;
+    }
+    &:nth-child(2) {
+      margin: 12px 0 0 55px;
+    }
+    &:last-child {
+      margin: 0 0 0 55px;
+    }
+
+    &-title {
+      font-size: 48px;
+    }
+  }
+
+  &__descr {
+  }
+}

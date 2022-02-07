@@ -111,9 +111,11 @@ body {
 
 // Sections
 .sect {
+  padding-top: $sectionVerticalPadding320;
+  padding-bottom: $sectionVerticalPadding320;
   &-top-text {
     margin: 0 0 15px;
-    display: block;
+    display: inline-block;
     background: $text_gradient;
     background-clip: text;
     -webkit-background-clip: text;
@@ -124,7 +126,9 @@ body {
   }
   &-bg {}
 
-  &-title {}
+  &-title {
+    font: bold 28px/1.3 $mainFont;
+  }
 
   &-descr {}
 }
