@@ -1,3 +1,44 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.hdr {
+  color: $white;
+  font: 16px/1 $mainFont;
+  .nav-link {
+    background: $text_gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    transition: color .5s;
+    &:hover {
+      color: transparent;
+    }
+  }
+  &__logo {
+  }
+
+  &__logo-img {
+  }
+
+  &__burger {
+    display: none;
+    &:active {
+    }
+    &.lazyloaded,
+    &:not(.lazy) {
+    }
+  }
+
+  &__nav {
+    display: block;
+    &-list {
+      display: flex;
+      align-items: center;
+    }
+    &-li {
+      &:nth-last-child(n+2) {
+        margin: 0 40px 0 0;
+      }
+    }
+  }
+}

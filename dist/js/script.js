@@ -834,7 +834,7 @@ document.addEventListener('DOMContentLoaded', function() {
     fade: false,
     allowPageScroll: false
   });
-  menu.open();
+  // menu.open();
 
   // let navLinks = qa('.nav-link, .hdr__callback');
 

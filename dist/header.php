@@ -25,7 +25,15 @@ $social_media_links = [
   'tiktok' => $tiktok
 ];
 
-$preload = [ $logo_url ];
+$preload = [ 
+  [
+    'url' => $logo_url
+  ],
+  [
+    'url' => "{$template_directory_uri}/img/icon-burger.svg",
+    'media' => '(max-width:767.98px)'
+  ]
+];
 
 if ( is_front_page() ) {
   $script_name = 'script-index';
@@ -67,8 +75,10 @@ $GLOBALS['page_style_name'] = $style_name ?>
 		'Poppins-Medium.woff',
 		'Poppins-Regular.woff'
 	];
+  echo PHP_EOL;
 	foreach ( $fonts as $font ) : ?>
 	<link rel="preload" href="<?php echo "{$template_directory_uri}/fonts/{$font}" ?>" as="font" type="font/woff" crossorigin="anonymous" /> <?php
+  echo PHP_EOL;
 	endforeach ?>
   <!-- other preload --> <?php
   echo PHP_EOL;
@@ -93,7 +103,7 @@ $GLOBALS['page_style_name'] = $style_name ?>
   <div id="page-wrapper">
     <header class="hdr container">
       <a href="<?php echo $site_url ?>" class="hdr__logo" title="Go to front page">
-        <img src="<?php echo $logo_url ?>" alt="logotype" class="hdr__logo-img">
+        <img src="<?php echo $logo_url ?>" alt="Logotype" width="41" height="47" class="hdr__logo-img">
       </a>
       <button type="button" class="hdr__burger"></button> <?php
       wp_nav_menu([

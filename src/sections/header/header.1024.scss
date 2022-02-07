@@ -1,3 +1,22 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.hdr {
+  &__logo {
+  }
+
+  &__logo-img {
+  }
+
+  &__burger {
+    &:active {
+    }
+    &.lazyloaded,
+    &:not(.lazy) {
+    }
+  }
+
+  &__nav {
+  }
+}

@@ -1,3 +1,27 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.hdr {
+  padding-top: 55px;
+  padding-bottom: 55px;
+  font-size: 18px;
+  &__logo {
+  }
+
+  &__logo-img {
+    width: 60px;
+    height: 70px;
+  }
+
+  &__burger {
+    &:active {
+    }
+    &.lazyloaded,
+    &:not(.lazy) {
+    }
+  }
+
+  &__nav {
+  }
+}
