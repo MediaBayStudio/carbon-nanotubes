@@ -68,6 +68,8 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 })();
 
+//=include ../sections/index-contacts/index-contacts.js
+
 //=include ../sections/footer/footer.js
 
 });

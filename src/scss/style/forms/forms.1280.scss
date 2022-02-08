@@ -2,3 +2,17 @@
 @import '../../assets/colors';
 @import '../../assets/mixins';
 @import '../../assets/variables';
+
+.field {
+  font-size: 16px;
+  &__inp,
+  &__textarea {
+    padding: 0 10px 12px 0;
+    height: 35px;
+  }
+}
+
+.check {
+  max-width: 260px;
+  font-size: 14px;
+}

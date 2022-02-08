@@ -1,6 +1,6 @@
 (function () {
   // Forms
-  let $forms = [id("contacts-form")];
+  let $forms = [id("contact-form")];
 
   let formValidator = function (params) {
     let $form = params.form,

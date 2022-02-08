@@ -1,3 +1,38 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.rd-hero {
+
+  &__top-text {
+  }
+
+  &__title {
+    margin: 0 0 60px;
+    font-size: 64px;
+  }
+
+  &__text {
+    display: flex;
+    flex-flow: wrap;
+    align-items: flex-start;
+  }
+
+  &__descr {
+    width: calc(50% - 100px);
+    &:nth-child(n) {
+      margin: 0 0 20px;
+    }
+    &:nth-child(odd) {
+      margin-right: 80px;
+    }
+    &:nth-child(odd) {
+      margin-right: 120px;
+    }
+    &:nth-last-child(n+2) {}
+  }
+
+  &__media {
+    height: 635px;
+  }
+}

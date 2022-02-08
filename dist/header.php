@@ -15,6 +15,7 @@ global
   $template_directory,
   $template_directory_uri;
 
+$current_template = $GLOBALS['current_template'];
 
 $social_media_links = [
   'telegram' => $telegram,
@@ -63,8 +64,8 @@ if ( is_front_page() ) {
   // $preload[] = $template_directory_uri . '/img/404.svg';
  } else {
   if ( $current_template ) {
-    $script_name = 'script-' . $GLOBALS['current_template'];
-    $style_name = 'style-' . $GLOBALS['current_template'];
+    $script_name = 'script-' . $current_template;
+    $style_name = 'style-' . $current_template;
   } else {
     $script_name = '';
     $style_name = '';

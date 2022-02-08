@@ -1,4 +1,9 @@
-
 @import 'assets/colors';
 @import 'assets/mixins';
 @import 'assets/variables';
+@import '../sections/header/header.768';
+@import '../sections/mobile-menu/mobile-menu.768';
+@import '../sections/research-and-development-hero/research-and-development-hero.768';
+@import '../sections/research-and-development-descr/research-and-development-descr.768';
+@import '../sections/research-and-development-projects/research-and-development-projects.768';
+@import '../sections/footer/footer.768';

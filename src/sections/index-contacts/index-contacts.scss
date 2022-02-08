@@ -1,3 +1,121 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-contacts {
+
+  &__top-text {
+  }
+
+  &__title {
+    margin: 0 0 35px;
+  }
+
+  &__form {
+    .field {
+      width: 100%;
+
+      &__inp {
+      }
+    
+      &__textarea {
+      }
+    }
+    .field-name,
+    .field-email {
+      margin: 0 0 30px;
+    }
+    .field-name {
+    }
+    .field-email {
+    }
+    .field-msg {
+      margin: 0 0 40px;
+    }
+    .form-bottom {
+    }
+
+    .check {
+    
+      &__inp {
+      }
+    
+      &__pseudo-inp {
+      }
+    
+      &__text {
+      }
+    }
+    .check-tick {
+    
+      &__pseudo-inp {
+      }
+    
+      &__text {
+      }
+    }
+    .btn {
+      margin: 20px 0 0;
+      width: 133px;
+      height: 55px;
+    }
+  }
+
+  &__contacts {
+    margin: 55px 0 0;
+  }
+
+  &__address,
+  &__email,
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__email,
+  &__links {
+    margin: 30px 0 0;
+  }
+
+  &__address-title,
+  &__email-title,
+  &__links-title {
+    margin: 0 0 10px;
+    width: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &__address {
+    max-width: 220px;
+  }
+
+  &__address-title {
+  }
+
+  &__address-descr {
+  }
+
+  &__email {
+  }
+
+  &__email-title {
+  }
+
+  &__email-descr {
+  }
+
+  &__links {
+  }
+
+  &__link {
+    width: 30px;
+    height: 30px;
+    &:nth-last-child(n+2) {
+      margin: 0 10px 0 0;
+    }
+  }
+
+  &__links-title {
+  }
+}

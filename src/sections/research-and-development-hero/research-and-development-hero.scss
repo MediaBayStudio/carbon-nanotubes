@@ -1,3 +1,31 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.rd-hero {
+  padding-top: 50px;
+
+  &__top-text {
+  }
+
+  &__title {
+    margin: 0 0 20px;
+    font: bold 28px/1.3 $mainFont;
+  }
+
+  &__text {
+  }
+
+  &__descr {
+    &:nth-last-child(n+2) {
+      margin: 0 0 20px;
+    }
+  }
+
+  &__media {
+    margin: 40px 0 0;
+    width: 100%;
+    height: 150px;
+    background: $gradient;
+  }
+}

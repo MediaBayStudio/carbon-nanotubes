@@ -1,3 +1,22 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.rd-hero {
+
+  &__top-text {
+  }
+
+  &__title {
+  }
+
+  &__text {
+  }
+
+  &__descr {
+    &:nth-last-child(n+2) {}
+  }
+
+  &__media {
+  }
+}

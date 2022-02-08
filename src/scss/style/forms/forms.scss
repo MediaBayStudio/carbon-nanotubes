@@ -17,12 +17,14 @@ label.invalid {
   grid-template-rows: auto auto;
   grid-template-columns: auto auto;
   cursor: pointer;
-  font: 12px/1.4 sans-serif;
+  font: 12px/1.5 $mainFont;
 
   &__inp {
     display: none;
     &:checked {
       + .check-tick__pseudo-inp {
+        background: $gradient;
+        border-color: transparent;
         &::before {
           opacity: 1;
         }
@@ -64,7 +66,7 @@ label.invalid {
 
   // START Checkbox with tick ✔
   &-tick {
-    max-width: 250px;
+    max-width: 210px;
 
     &:hover {
       > .check__pseudo-inp {
@@ -74,15 +76,16 @@ label.invalid {
     }
 
     &__pseudo-inp {
-      margin: 0 10px 0 0;
+      margin: 0 15px 0 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 15px;
+      font-size: 18px;
       width: 1em;
       height: 1em;
       border: 1px solid;
       pointer-events: none;
+      transition: background .5s, border-color .5s;
 
       &::before {
         margin: 0.15625em 0 0 0.15625em;
@@ -132,24 +135,23 @@ label.invalid {
 // START Field (input, textarea)
 .field {
   display: inline-block;
-  font: 16px/1 sans-serif;
+  font: 14px/1 $mainFont;
   position: relative;
 
   &__textarea,
   &__inp {
-    padding: 5px 10px;
+    padding: 0 10px 8px 0;
     width: 100%;
+    height: 30px;
     border: 0;
     background: 0 0;
     font: inherit;
-    // color: $black;
-    // border: 1px solid;
-    // border-bottom: 1px solid;
-    // transition: border-color .5s;
-    // transition: border-bottom-color .5s;
+    color: $white;
+    border-bottom: 1px solid $grey3;
+    transition: border-bottom-color .5s;
 
     &::placeholder {
-      // color: transparentize($black, .5);
+      color: $grey3;
     }
 
     &.invalid {
@@ -159,37 +161,36 @@ label.invalid {
 
     &:focus,
     &.filled {
-      &.valid {
-        // border-color: $black;
-        // border-bottom-color: $black;
-      }
+      // &.valid {
+        border-bottom-color: $white;
+      // }
     }
   }
 
   // START Field (input, textarea) with text placeholder
-  &__text {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 10px;
-    display: flex;
-    align-items: center;
-    color: grey;
-    transition: top 0.25s, bottom 0.25s, font-size 0.25s;
-    pointer-events: none;
-  }
+  // &__text {
+  //   position: absolute;
+  //   top: 0;
+  //   bottom: 0;
+  //   left: 10px;
+  //   display: flex;
+  //   align-items: center;
+  //   color: grey;
+  //   transition: top 0.25s, bottom 0.25s, font-size 0.25s;
+  //   pointer-events: none;
+  // }
 
-  &__textarea,
-  &__inp {
-    &:focus,
-    &.filled {
-      ~ .field__text {
-        top: 7.5px;
-        bottom: 100%;
-        font-size: .7em;
-      }
-    }
-  }
+  // &__textarea,
+  // &__inp {
+  //   &:focus,
+  //   &.filled {
+  //     ~ .field__text {
+  //       top: 7.5px;
+  //       bottom: 100%;
+  //       font-size: .7em;
+  //     }
+  //   }
+  // }
   // END Field (input, textarea) with text placeholder
 }
 // END Field (input, textarea)

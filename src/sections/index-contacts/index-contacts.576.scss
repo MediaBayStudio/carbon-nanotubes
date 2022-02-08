@@ -1,3 +1,79 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-contacts {
+
+  &__top-text {
+  }
+
+  &__title {
+  }
+
+  &__form {
+    .field {
+
+      &__inp {
+      }
+    
+      &__textarea {
+      }
+    }
+    .field-name {
+    }
+    .field-tel {
+    }
+    .field-msg {
+    }
+    .form-bottom {
+    }
+    .check {
+    
+      &__inp {
+      }
+    
+      &__pseudo-inp {
+      }
+    
+      &__text {
+      }
+    }
+    .check-tick {
+    
+      &__pseudo-inp {
+      }
+    
+      &__text {
+      }
+    }
+    .btn {
+    }
+  }
+
+  &__contacts {
+  }
+
+  &__address {
+  }
+
+  &__address-title {
+  }
+
+  &__address-descr {
+  }
+
+  &__email {
+  }
+
+  &__email-title {
+  }
+
+  &__email-descr {
+  }
+
+  &__links {
+  }
+
+  &__links-title {
+  }
+}
