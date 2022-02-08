@@ -1,3 +1,25 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.buy-sect {
+  background: center / cover no-repeat, #252324;
+  &.lazyloaded,
+  &:not(.lazy) {
+    background-image: url('../img/text-sect-bg.svg');
+  }
+  &__title {
+    margin: 0 0 30px;
+    max-width: 880px;
+  }
+
+  &__descr {
+    max-width: 485px;
+  }
+
+  &__link {
+    width: 203px;
+    height: 61px;
+    font-size: 18px;
+  }
+}
