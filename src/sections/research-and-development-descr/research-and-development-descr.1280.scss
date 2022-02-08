@@ -1,3 +1,14 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.rd-descr {
+
+  &__title {
+    margin: 0 0 50px;
+  }
+
+  &__text {
+    max-width: 600px;
+  }
+}
