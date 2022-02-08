@@ -1,3 +1,55 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.rd-projects {
+
+  &__top-text {
+  }
+
+  &__title {
+
+  }
+
+  &__items {
+    margin: (145px - 55px) * -1 0 0;
+  }
+
+  &__item {
+    margin: 145px 0 0;
+    display: flex;
+    align-items: center;
+    &.odd {
+      flex-flow: row-reverse;
+      .rd-projects__item-pic {
+        margin: 0 0 0 auto;
+      }
+    }
+    &.even {
+      .rd-projects__item-pic {
+        margin: 0 auto 0 0;
+      }
+    }
+  }
+
+  &__item-pic {
+    flex-shrink: 0;
+  }
+
+  &__item-img {
+  }
+
+  &__item-text {
+    margin: 0;
+    max-width: 505px;
+  }
+
+  &__item-title {
+    margin: 0 0 30px;
+    font-size: 22px;
+  }
+
+  &__item-descr {
+  }
+
+}

@@ -58,8 +58,10 @@ function generate_webp( $image_meta, $img_id ) {
 
     update_post_meta( $img_id, $size_name . '_webp', $webp_path );
 
-    chdir( $dirname );
-    exec( $cwebp );
+    if ( $image_meta ) {
+      chdir( $dirname );
+      exec( $cwebp );
+    }
   }
 
   $webp_name = $img_pathinfo['filename'] . '.webp';
@@ -67,9 +69,12 @@ function generate_webp( $image_meta, $img_id ) {
 
   $cwebp = '/usr/local/bin/cwebp -q 90 ' . $img_pathinfo['basename'] . ' -o ' . $webp_name;
 
-  chdir( $dirname );
-  exec( $cwebp );
-  minify_img( $img_path );
+  if ( $image_meta ) {
+    chdir( $dirname );
+    exec( $cwebp );
+    minify_img( $img_path );
+  }
+  
   update_post_meta( $img_id, 'webp', $webp_path );
 
   return $image_meta;

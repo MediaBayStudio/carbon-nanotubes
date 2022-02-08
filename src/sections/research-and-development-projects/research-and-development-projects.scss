@@ -1,3 +1,39 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.rd-projects {
+
+  &__top-text {
+  }
+
+  &__title {
+  }
+
+  &__items {
+    margin: -20px 0 0;
+  }
+
+  &__item {
+    margin: 60px 0 0 0;
+  }
+
+  &__item-pic {
+  }
+
+  &__item-img {
+  }
+
+  &__item-text {
+    margin: 30px 0 0;
+  }
+
+  &__item-title {
+    margin: 0 0 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+
+  &__item-descr {
+  }
+}
