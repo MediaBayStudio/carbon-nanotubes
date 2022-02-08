@@ -5,7 +5,7 @@
     foreach ( $section['items'] as $item ) : ?>
       <li class="index-about__property">
         <span class="index-about__property-title"><?php echo $item['title'] ?></span>
-        <p class="index-about__property_descr"><?php echo $item['descr'] ?></p>
+        <p class="index-about__property-descr"><?php echo $item['descr'] ?></p>
       </li> <?php
     endforeach;
     unset( $item ) ?>

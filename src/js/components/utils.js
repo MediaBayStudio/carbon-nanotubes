@@ -76,7 +76,7 @@ var browser = {
   fakeScrollbar,
   // Сокращение записи querySelector
   q = function(selector, element) {
-    element = element || body;
+    element = element || document.body;
     return element.querySelector(selector);
   },
   // Сокращение записи querySelectorAll + перевод в массив

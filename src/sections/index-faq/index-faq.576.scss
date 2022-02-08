@@ -1,3 +1,31 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.index-faq {
+
+  &__top-text {
+  }
+
+  &__title {
+  }
+
+  &__whitepaper-block {
+  }
+
+  &__descr {
+  }
+
+  &__list {
+  }
+
+  &__item {
+    &:nth-last-child(n+2) {}
+  }
+
+  &__item-question {
+  }
+
+  &__item-answer {
+  }
+}

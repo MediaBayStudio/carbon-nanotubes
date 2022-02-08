@@ -6,6 +6,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //=include ../sections/index-hero/index-hero.js
 
+//=include ../sections/index-about/index-about.js
+
+//=include ../sections/index-perspective/index-perspective.js
+
+//=include ../sections/index-text-link/index-text-link.js
+
+//=include ../sections/index-faq/index-faq.js
+
 //=include ../sections/footer/footer.js
 
 });
