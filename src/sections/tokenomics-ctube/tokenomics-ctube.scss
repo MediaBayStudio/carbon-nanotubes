@@ -1,3 +1,48 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.tokenomics-ctube {
+
+  &__top-text {
+  }
+
+  &__title {
+    margin: 0 0 40px;
+  }
+
+  &__items {
+    overflow: hidden;
+  }
+
+  &__item {
+    padding: 20px 20px 50px;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    background: $grey2;
+    position: relative;
+
+    &::after {
+      content: attr(data-number);
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font: 600 16px/1 $mainFont;
+      color: #8E8D8D;
+    }
+  }
+
+  &__item-img {
+    margin: 0 0 40px;
+  }
+
+  &__item-title {
+    margin: 0 0 10px;
+    font: bold 16px/1.5 $mainFont;
+    text-transform: uppercase;
+  }
+
+  &__item-descr {
+  }
+}

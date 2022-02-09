@@ -1,1 +1,1 @@
-@charset "UTF-8";
+@charset "UTF-8";.tokenomics-ctube__title{margin:0 0 40px}.tokenomics-ctube__items{overflow:hidden}.tokenomics-ctube__item{padding:20px 20px 50px;display:flex;flex-flow:column;align-items:flex-start;background:#252324;position:relative}.tokenomics-ctube__item::after{content:attr(data-number);position:absolute;top:20px;right:20px;font:600 16px/1 Poppins,sans-serif;color:#8e8d8d}.tokenomics-ctube__item-img{margin:0 0 40px}.tokenomics-ctube__item-title{margin:0 0 10px;font:bold 16px/1.5 Poppins,sans-serif;text-transform:uppercase}
