@@ -38,3 +38,19 @@
   @return calc(#{$start}(100vw - #{$minScreenWidth}px)/(#{$maxScreenWidth} - #{$minScreenWidth})*(#{$maxPxs} - #{$minPxs}) + #{$minPxs}px#{$end});
 }
 
+@mixin gradient-border($width) {
+  &::before {
+    content:"";
+    width: 100%;
+    height: 100%;
+    padding: $width;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: inherit;
+    background: $gradient;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+  }
+}

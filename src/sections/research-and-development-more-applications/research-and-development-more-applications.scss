@@ -1,3 +1,80 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.rd-more-apps {
+
+  &__top-text {
+  }
+
+  &__title {
+    margin: 0 0 40px;
+  }
+
+  &__items {
+  }
+
+  &__item {
+    margin: 40px 0 0;
+    overflow: hidden;
+    transition: max-height .5s;
+    &.active {
+      .rd-more-apps__item-arrow {
+        background: $gradient;
+        &::after {
+          transform: rotate(-135deg) translate(1px, -1px);
+        }
+      }
+    }
+  }
+
+  &__item-title {
+    // margin: 0 0 20px;
+    display: flex;
+    align-items: center;
+    font: 600 16px/1.5 $mainFont;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  &__item-arrow {
+    margin: 0 20px 0 0;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: relative;
+    background: $black;
+    pointer-events: none;
+
+    @include gradient-border(1.5px);
+
+    &::after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-left: 2px solid $white;
+      border-bottom: 2px solid $white;
+      transition: transform .5s;
+      transform: rotate(-45deg) translate(1px, -1px);
+    }
+  }
+
+  &__item-bottom-text {
+    margin: 20px 0 40px;
+  }
+
+  &__item-descr {
+    margin: 40px 0 0;
+    padding: 0 0 10px;
+  }
+
+  &__item-pic {
+  }
+
+  &__item-img {
+  }
+}

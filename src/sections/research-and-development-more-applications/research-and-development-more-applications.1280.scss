@@ -1,3 +1,66 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.rd-more-apps {
+
+  &__top-text {
+  }
+
+  &__title {
+    margin: 0 0 -20px;
+  }
+
+  &__items {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 20px;
+      width: 1px;
+      height: 100%;
+      background: $gradient;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__item {
+    margin: 70px 0 0;
+    padding: 0 0 0 85px;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    grid-template-columns: 505px 105px auto;
+  }
+
+  &__item-title {
+    margin: 0 auto 0 -85px;
+    grid-row: 1;
+    grid-column: 1;
+    font-size: 22px;
+  }
+  
+  &__item-arrow {
+    margin: 0 45px 0 0;
+  }
+
+  &__item-bottom-text {
+    margin: 25px 0 30px;
+    grid-row: 2;
+    grid-column: 1;
+  }
+
+  &__item-descr {
+    margin: 65px 0 0;
+    grid-row: 1/span 3;
+    grid-column: 3;
+  }
+
+  &__item-pic {
+    grid-row: 3;
+    grid-column: 1;
+  }
+
+  &__item-img {
+  }
+}

@@ -4,13 +4,12 @@
   <p class="rd-properties__items-descr"></p>
   <button type="button" class="rd-properties__items-prev"></button>
   <button type="button" class="rd-properties__items-next"></button>
-  <div class="rd-properties__items"> <?php
+  <div class="rd-properties__items lazy" data-src="#"> <?php
     $i = 0;
     $section['props'] = array_merge( $section['props'], $section['props'] );
     foreach ( $section['props'] as $property ) :
-      $class = $i % 2 === 0 ? 'odd' : 'even';
       $webp = get_post_meta( $property['img']['ID'], 'webp' )[0] ?>
-      <div class="rd-properties__item <?php echo $class ?>" data-descr="<?php echo $property['descr'] ?>">
+      <div class="rd-properties__item" data-descr="<?php echo $property['descr'] ?>">
         <picture class="rd-properties__item-pic lazy"> <?php
           if ( $webp ) : ?>
             <source type="image/webp" srcset="#" data-srcset="<?php echo $upload_baseurl . $webp ?>"> <?php

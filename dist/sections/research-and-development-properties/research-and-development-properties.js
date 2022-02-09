@@ -103,8 +103,6 @@
           }
         };
 
-      console.log('slides.length', slides.length);
-
 
       if (!itemsDescription.textContent) {
         itemsDescription.textContent = firstSlide.getAttribute('data-descr');
@@ -113,8 +111,8 @@
       buildSlider();
       windowFuncs.resize.push(buildSlider);
 
-      firstPicture.removeEventListener('lazyloaded', initPropertiesSection);
+      slider.removeEventListener('lazyloaded', initPropertiesSection);
     };
 
-    firstPicture.addEventListener('lazyloaded', initPropertiesSection);
+    slider.addEventListener('lazyloaded', initPropertiesSection);
 })();
