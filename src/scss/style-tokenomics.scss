@@ -1,4 +1,10 @@
-
 @import 'assets/colors';
 @import 'assets/mixins';
 @import 'assets/variables';
+@import '../sections/header/header';
+@import '../sections/mobile-menu/mobile-menu';
+@import '../sections/tokenomics-hero/tokenomics-hero';
+@import '../sections/tokenomics-ctube/tokenomics-ctube';
+@import '../sections/tokenomics-token-distribution-model/tokenomics-token-distribution-model';
+@import '../sections/title-descr-link/title-descr-link';
+@import '../sections/footer/footer';
