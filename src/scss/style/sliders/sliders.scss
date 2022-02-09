@@ -2,7 +2,9 @@
 @import '../../assets/colors';
 @import '../../assets/mixins';
 @import '../../assets/variables';
+
 .dots {
+  margin: 20px 0 0;
   display: flex;
   justify-content: center;
   > li {
@@ -15,13 +17,13 @@
 li.slick-active > .dot {
   cursor: default;
   transform: scale(2);
-  // background: $red;
+  background: $gradient;
 }
 
 .dots .dot {
   width: 6px;
   height: 6px;
-  // background: $light;
+  background: $grey;
   border-radius: 50%;
   transition: transform .5s, color .5s
 }
