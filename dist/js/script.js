@@ -76,17 +76,21 @@ var browser = {
   fakeScrollbar,
   // Сокращение записи querySelector
   q = function(selector, element) {
-    element = element || document.body;
+    element = element || document;
     return element.querySelector(selector);
   },
   // Сокращение записи querySelectorAll + перевод в массив
   qa = function(selectors, element, toArray) {
-    element = element || body;
+    element = element || document;
     return toArray ? Array.prototype.slice.call(element.querySelectorAll(selectors)) : element.querySelectorAll(selectors);
   },
   // Сокращение записи getElementById
   id = function(selector) {
     return document.getElementById(selector);
+  },
+  className = function(selector, element) {
+    element = element || document;
+    return element.getElementsByClassName(selector);
   },
   // Фикс 100% высоты экрана для моб. браузеров
   setVh = function() {

@@ -1,3 +1,133 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.tokenomics-distribution {
+
+  &__top-text {
+  }
+
+  &__title {
+    margin: 0 0 45px;
+  }
+
+  &__chart-block {
+    display: flex;
+    align-items: center;
+  }
+
+  &__chart-wrap {
+    margin: 0 auto 0 0;
+    width: 480px;
+    height: 480px;
+  }
+
+  &__chart {
+    max-height: 100%;
+  }
+
+  &__chart-tooltip {
+  }
+}
+.distribution-chart {
+
+  &__data {
+    margin: 0 125px 0 0;
+    max-width: 440px;
+    align-items: flex-start;
+    align-content: flex-start;
+  }
+
+  &__data-title {
+    margin: 0;
+    font-size: 22px;
+  }
+
+  &__data-item {
+    margin-top: 40px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: auto 1fr;
+  }
+
+  &__data-item-color {
+    margin: 0 20px 0 0;
+    width: 32px;
+    height: 32px;
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  &__data-item-title {
+    margin: 0 0 10px;
+    grid-row: 1;
+    grid-column: 2;
+    font-size: 22px;
+  }
+
+  &__data-item-descr {
+    grid-row: 2;
+    grid-column: 2;
+  }
+}
+.tokenomics-supply {
+  display: flex;
+  align-items: center;
+
+  &__block {
+    &:first-child {
+      margin: 0 170px 0 0;
+    }
+  }
+
+  &__number {
+    margin: 0 0 10px;
+    font-size: 48px;
+  }
+
+  &__text {
+    margin: 0 120px 0 0;
+    font-size: 22px;
+  }
+}
+.tokenomics-table-block {
+  display: flex;
+
+  &__text {
+    margin: 0 120px 0 0;
+    max-width: 390px;
+  }
+
+  &__wrap {
+    padding: 0;
+  }
+
+  &__title {
+    font-size: 22px;
+  }
+
+  &__descr {
+  }
+
+  &__table {
+  }
+}
+.tokenomics-table {
+
+  &__hdr {
+  }
+
+  &__tr {
+  }
+
+  &__th {
+    padding-bottom: 15px;
+  }
+
+  &__body {
+  }
+
+  &__td {
+    padding: 20px 0;
+  }
+}

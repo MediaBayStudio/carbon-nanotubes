@@ -50,6 +50,10 @@ add_action( 'wp_enqueue_scripts', function() {
     $scripts[] = $GLOBALS['page_script_name'] . '.js';
   }
 
+  if ( $GLOBALS['current_template'] === 'tokenomics' ) {
+    $scripts[] = 'chartjs.js';
+  }
+
   foreach ( $scripts as $script ) {
     wp_enqueue_script( "{$script}", "{$template_directory_uri}/js/{$script}", [], null );
   }
@@ -70,12 +74,12 @@ add_action( 'wp_enqueue_scripts', function() {
   add_filter( 'script_loader_tag',   function( $html, $handle ) {
     switch ( $handle ) {
       case 'svg4everybody.min.js':
-		case 'slick.min.js':
-		case 'lazy.min.js':
-		case 'Popup.min.js':
-		case 'script.js':
-		
-      case $GLOBALS['page_script_name']:
+      case 'slick.min.js':
+      case 'lazy.min.js':
+      case 'Popup.min.js':
+      case 'script.js':
+      case 'chartjs.js':
+      case $GLOBALS['page_script_name'] . '.js':
       case 'contact-form-7':
         $html = str_replace( ' src', ' defer src', $html );
         break;

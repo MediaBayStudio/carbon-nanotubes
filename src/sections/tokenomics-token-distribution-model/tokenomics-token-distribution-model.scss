@@ -1,3 +1,166 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+.tokenomics-distribution {
+
+  &__top-text {
+  }
+
+  &__title {
+    margin: 0 0 40px;
+  }
+
+  &__chart-block {
+  }
+
+  &__chart-wrap {
+    margin: 0 0 50px;
+    // position: relative;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 100%;
+  }
+
+  &__chart {
+    grid-row: 1;
+    grid-column: 1;
+    // z-index: -1;
+    &:hover {
+      +.tokenomics-distribution__chart-tooltip {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__chart-tooltip {
+    padding: 35px 25px;
+    z-index: 1;
+    margin: auto;
+    grid-row: 1;
+    grid-column: 1;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // width: 35%;
+    // height: 35%;
+    border-radius: 50%;
+    background: $black;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .5s;
+    &:empty {
+      opacity: 0 !important;
+    }
+  }
+}
+
+.distribution-chart {
+
+  &__data {
+    display: flex;
+    flex-flow: wrap;
+  }
+
+  &__data-title {
+    margin: 0 0 -10px;
+    font: 16px/1.5 $mainFont;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  &__data-item {
+    margin: 30px 0 0;
+    width: 50%;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+  }
+
+  &__data-item-color {
+    margin: 0 0 15px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+  }
+
+  &__data-item-title {
+    margin: 0 0 5px;
+    font: 600 15px/1 $mainFont;
+  }
+
+  &__data-item-descr {
+  }
+}
+.tokenomics-supply {
+  background: linear-gradient(315.38deg, #12C2E9 15.15%, #C471ED 69.32%, #F64F59 110.92%);
+
+  &__block {
+    display: flex;
+    flex-flow: column;
+    &:first-child {
+      margin: 0 0 40px;
+    }
+  }
+
+  &__number {
+    margin: 0 0 7px;
+    font: 600 28px/1.3 $mainFont;
+  }
+
+  &__text {}
+}
+.tokenomics-table-block {
+
+  &__text {
+    margin: 0 0 40px;
+  }
+
+  &__title {
+    margin: 0 0 20px;
+    display: block;
+    text-transform: uppercase;
+    font: 600 16px/1.5 $mainFont;
+  }
+
+  &__descr {}
+
+  &__wrap {
+    padding: 0 0 15px;
+    overflow: auto;
+  }
+
+  &__table {}
+}
+.tokenomics-table {
+  border-collapse: collapse;
+
+  &__hdr {
+    text-align: left;
+    color: $violet;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  &__tr {}
+
+  &__th {
+    padding: 0 130px 15px 0;
+    border-bottom: 1px solid #F7F7F7;
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  &__body {}
+
+  &__td {
+    padding: 15px 0;
+    border-bottom: 1px solid #F7F7F7;
+  }
+}
