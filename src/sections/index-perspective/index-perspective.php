@@ -6,7 +6,7 @@
     foreach ( $section['items'] as $item ) :
       $class = $i % 2 === 0 ? 'odd' : 'even';
       $webp = get_post_meta( $item['img']['ID'], 'webp' )[0] ?>
-      <li class="index-perspective__item <?php echo $class ?>">
+      <li class="index-perspective__item lazy <?php echo $class ?>" data-src="#">
         <picture class="index-perspective__item-pic lazy"> <?php
           if ( $webp ) : ?>
             <source type="image/webp" srcset="#" data-srcset="<?php echo $upload_baseurl . $webp ?>"> <?php

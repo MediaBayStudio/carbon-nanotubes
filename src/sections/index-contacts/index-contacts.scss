@@ -72,6 +72,16 @@
     flex-wrap: wrap;
   }
 
+  &__email-descr {
+    background: $text_gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    transition: color .5s;
+    &:hover {
+      color: transparent;
+    }
+  }
+
   &__email,
   &__links {
     margin: 30px 0 0;

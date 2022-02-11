@@ -11,5 +11,10 @@
   &__link {
     margin: 40px 0 0;
     padding: 20px 43px;
+    transition: border-color .5s, color .5s;
+    &:hover {
+      // color: $black;
+      // border-color: $black;
+    }
   }
 }

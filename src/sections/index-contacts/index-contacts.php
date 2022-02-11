@@ -9,7 +9,7 @@
     </div>
     <div class="index-contacts__email">
       <span class="index-contacts__email-title">E-mail</span>
-      <p class="index-contacts__email-descr"><?php echo $email ?></p>
+      <a href="mailto:<?php echo $email ?>" class="index-contacts__email-descr"><?php echo $email ?></a>
     </div> <?php
     $social_media_links_html = '';
     foreach ( $social_media_links as $name => $url ) :

@@ -33,7 +33,7 @@
         }
       }
     };
-    // buildSlider();
+    buildSlider();
     windowFuncs.resize.push(buildSlider);
 
     

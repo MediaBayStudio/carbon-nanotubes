@@ -66,6 +66,11 @@ if ( is_front_page() ) {
   if ( $current_template ) {
     $script_name = 'script-' . $current_template;
     $style_name = 'style-' . $current_template;
+    if ( $current_template === 'tokenomics' ) {
+      $preload[] = [
+        'url' => "{$template_directory_uri}/img/tokenomics-hero-bg.svg"
+      ];
+    }
   } else {
     $script_name = '';
     $style_name = '';

@@ -14,11 +14,11 @@
         name: {
           required: true,
         },
-        tel: {
-          required: true,
-          pattern: /\+7\([0-9]{3}\)[0-9]{3}\-[0-9]{2}\-[0-9]{2}/,
-          // or: 'email'
-        },
+        // tel: {
+        //   required: true,
+        //   pattern: /\+7\([0-9]{3}\)[0-9]{3}\-[0-9]{2}\-[0-9]{2}/,
+        //   // or: 'email'
+        // },
         email: {
           required: true,
           pattern:
@@ -34,25 +34,25 @@
         },
       },
       messages = {
-        tel: {
-          // required: 'Введите ваш телефон или E-mail',
-          required: "Введите ваш телефон",
-          pattern: "Укажите верный телефон",
-        },
+        // tel: {
+        //   // required: 'Введите ваш телефон или E-mail',
+        //   required: "Введите ваш телефон",
+        //   pattern: "Укажите верный телефон",
+        // },
         name: {
-          required: "Введите ваше имя",
+          required: "Enter your name",
         },
         email: {
           // required: 'Введите ваш E-mail или телефон',
-          required: "Введите ваш E-mail",
-          pattern: "Введите верный E-mail",
+          required: "Enter your e-mail",
+          pattern: "Enter valid e-mail",
         },
         msg: {
-          required: "Введите ваше сообщение",
-          pattern: "Введены недопустимые символы",
+          required: "Type a message",
+          pattern: "Invalid message",
         },
         policy: {
-          required: "Согласитель с политикой обработки персональных данных",
+          required: "Confirm the privacy policy",
         },
       },
       /**
@@ -91,6 +91,7 @@
             $orFormElement = thisForm[or];
 
           if (rule) {
+            console.log($formElement);
             if (
               $formElement.hasAttribute("required") ||
               rule.required === true

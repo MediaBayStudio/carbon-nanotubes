@@ -5,27 +5,52 @@
 
 .dots {
   margin: 20px 0 0;
+  padding: 0 0 5px;
   display: flex;
   justify-content: center;
   > li {
+    display: flex;
     &:nth-last-child(n+2) {
-      margin-right: 14px;
+      margin-right: 15px;
     }
   }
 }
 
 li.slick-active > .dot {
-  cursor: default;
-  transform: scale(2);
+  pointer-events: none;
   background: $gradient;
+  &::before {
+    opacity: 1;
+  }
 }
 
 .dots .dot {
-  width: 6px;
-  height: 6px;
+  width: 10px;
+  height: 10px;
   background: $grey;
   border-radius: 50%;
-  transition: transform .5s, color .5s
+  position: relative;
+  transition: background .5s;
+  &::before {
+    content: '';
+    padding: 1px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    top: -5px;
+    left: -5px;
+    position: absolute;
+    border-radius: inherit;
+    background: $gradient;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    opacity: 0;
+    transition: opacity .5s;
+    pointer-events: none;
+  }
+  &:hover {
+    background: $violet;
+  }
 }
 
 .slick {

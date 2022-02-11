@@ -1,4 +1,4 @@
-<section class="index-faq container sect">
+<section class="index-faq container sect"<?php echo $section_id ?>>
   <span class="index-faq__top-text sect-top-text"><?php echo $section['upper_text'] ?></span>
   <h2 class="index-faq__title sect-title"><?php echo $section['title'] ?></h2>
   <div class="index-faq__whitepaper-block">

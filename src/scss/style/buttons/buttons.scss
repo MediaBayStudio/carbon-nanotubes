@@ -11,10 +11,31 @@
   font: 12px/1 $mainFont;
   border-radius: 5px;
   position: relative;
+  &:active {
+    transform: scale(99%);
+  }
 }
 
 .btn-gradient {
-  background: $gradient;
+  z-index: 1;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: $gradient;
+    border-radius: inherit;
+    transition: opacity .5s;
+  }
+  &:hover {
+    &::after {
+      opacity: 0;
+    }
+  }
+  @include gradient-border(1.5px)
 }
 
 .btn-grey {
@@ -26,27 +47,48 @@
 }
 
 .btn-ol-gradient {
-  &::before {
-    content:"";
-    width: 100%;
-    height: 100%;
-    padding: 1.5px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: inherit;
-    background: $gradient;
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-            mask-composite: exclude;
-  }
+  @include gradient-border(1.5px);
+  @include gradient-text('hover');
 }
 
 .btn-ol-white {
   border: 1px solid $white;
+  z-index: 1;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: inherit;
+    background: $white;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .5s;
+    z-index: -1;
+  }
+  &:hover {
+    &::after {
+      opacity: 1;
+    }
+    >.btn-text {
+      color: transparent;
+    }
+  }
+  >.btn-text {
+    position: relative;
+    @include gradient-text('nohover');
+  }
 }
 
 .btn-whitepaper {
+  border: 1px solid transparent;
+  transition: border-color .5s, background .5s;
+  &:hover {
+    border-color: currentColor;
+    background: transparent;
+  }
   &::after {
     content: '';
     flex-shrink: 0;

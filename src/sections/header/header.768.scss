@@ -39,6 +39,22 @@
       &:nth-last-child(n+2) {
         margin: 0 40px 0 0;
       }
+      &.current {
+        >.nav-link {
+          position: relative;
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            border-radius: 5px;
+            background: linear-gradient(266.84deg, #12C2E9 -5.92%, #C471ED 55.67%, #F64F59 106.52%);
+            pointer-events: none;
+          }
+        }
+      }
     }
   }
 }

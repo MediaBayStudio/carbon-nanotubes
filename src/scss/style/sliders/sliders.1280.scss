@@ -2,3 +2,12 @@
 @import '../../assets/colors';
 @import '../../assets/mixins';
 @import '../../assets/variables';
+
+.dots {
+  margin: 40px 0 0;
+  > li {
+    &:nth-last-child(n+2) {
+      // margin-right: 14px;
+    }
+  }
+}

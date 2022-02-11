@@ -61,6 +61,37 @@
 
       .index-perspective__item-descr {}
     }
+
+    &:nth-child(3) {
+      &.lazyloaded,
+      &:not(.lazy) {
+        &::before {
+          background-image: url('../img/index-perspective-img.svg');
+        }
+      }
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      &::before {
+        width: 1280px;
+        height: 1280px;
+        transform: rotate(105deg);
+      }
+    }
+
+    &:nth-child(2) {
+      &::before {
+        top: -600px;
+        left: 530px;
+      }
+    }
+    &:nth-child(3) {
+      &::before {
+        top: -380px;
+        left: -845px;
+      }
+    }
   }
   &__link {
     margin-top: 90px;
