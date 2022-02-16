@@ -3,10 +3,11 @@
 @import '../../scss/assets/variables';
 
 .buy-sect {
-  background: center / cover no-repeat, #252324;
+  background: right -450px top -100px no-repeat,#252324;
+  // background: center / cover no-repeat, #252324;
   &.lazyloaded,
   &:not(.lazy) {
-    background-image: url('../img/text-sect-bg.svg');
+    background-image: url('../img/index-perspective-img.svg');
   }
   &__title {
     margin: 0 0 30px;

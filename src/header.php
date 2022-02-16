@@ -53,7 +53,7 @@ if ( is_front_page() ) {
 } else if ( is_404() ) {
   $script_name = '';
   $style_name = 'style-index';
-  // $preload[] = $template_directory_uri . '/img/404.svg';
+  $preload[] = $template_directory_uri . '/img/hero-404-img.svg';
  } else {
   if ( $current_template ) {
     $script_name = 'script-' . $current_template;

@@ -10,6 +10,10 @@
     padding: 0 10px 12px 0;
     height: 35px;
   }
+  &__textarea {
+    height: 50px;
+    resize: none;
+  }
 }
 
 .check {

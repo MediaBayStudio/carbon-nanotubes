@@ -16,13 +16,6 @@ var browser = {
     isYandex: !!window.yandex,
     isMac: window.navigator.platform.toUpperCase().indexOf('MAC') >= 0
   },
-  // Размреы экранов для медиазапросов
-  // mediaQueries = {
-  //   's': '(min-width:575.98px)',
-  //   'm': '(min-width:767.98px)',
-  //   'lg': '(min-width:1023.98px)',
-  //   'xl': '(min-width:1439.98px)'
-  // },
   SLIDER = {
     // nextArrow: '<button type="button" class="arrow"></button>',
     // prevArrow: '<button type="button" class="arrow"></button>',
@@ -37,20 +30,10 @@ var browser = {
       className = (className.indexOf('prev') === -1 ? 'next ' : 'prev ') + className;
       return '<button type="button" class="arrow arrow-' + className + '">' + inside + '</button>';
     },
-    // setImages: function(slides) {
-    //   for (let i = 0, len = slides.length; i < len; i++) {
-    //     let img = q('img', slides[i]);
-    //     // Если элемент найден и он без display:none
-    //     if (img && img.offsetParent) {
-    //       img.src = img.getAttribute('data-lazy') || img.getAttribute('data-src');
-    //     }
-    //   }
-    // }
   },
   /*
 Объединение слушателей для window на события 'load', 'resize', 'scroll'
-Все слушатели на окно следует задавать через него, например:
-  window.resize.push(functionName)
+window.resize.push(functionName)
 Все ф-ии, добавленные в [] window.resize, будут заданы одним слушателем
 */
   windowFuncs = {
@@ -107,10 +90,8 @@ var browser = {
   mobileMenu,
   // Прокрутка до элемента при помощи requestAnimationFrame
   scrollToTarget = function(e, target) {
-    e.preventDefault();
-
     if (this === window) {
-      _ = e.target;
+      _ = e && e.target;
     } else {
       _ = this;
     }
@@ -122,7 +103,12 @@ var browser = {
     }
 
     if (!target && _.tagName === 'A') {
-      target = q(_.getAttribute('href'));
+      let hash = _.getAttribute('href').match(/#[^?]*/);
+      if (hash) {
+        target = q(hash[0]);
+      } else {
+        return;
+      }
     }
 
     if (target.constructor === String) {
@@ -134,7 +120,10 @@ var browser = {
       return;
     }
 
+    e && e.preventDefault();
+
     menu && menu.close();
+    // menu && menu.destroy();
 
     let wndwY = window.pageYOffset,
       targetStyles = getComputedStyle(target),
@@ -152,6 +141,8 @@ var browser = {
 
         if (r != wndwY + targetTop) {
           requestAnimationFrame(step);
+          // pageScroll(false);
+          // menu && menu.close();
         }
       }
 
@@ -163,7 +154,7 @@ var browser = {
     body.classList.toggle('no-scroll', disallow);
     body.style.paddingRight = disallow ? fakeScrollbar.offsetWidth - fakeScrollbar.clientWidth + 'px' : '';
   },
-  // Функция липкого элемента средствами js
+  // Функция липкого элемента js
   sticky = function($el, fixThresholdDir, className) {
     $el = typeof $el === 'string' ? q($el) : $el;
     className = className || 'fixed';
@@ -174,6 +165,9 @@ var browser = {
       $elParent = $el.parentElement,
       fixElement = function() {
         if (!$el.classList.contains(className) && pageYOffset >= fixThreshold) {
+          if ($el.classList.contains('hdr') && document.body.classList.contains('no-scroll')) {
+            return;
+          }
           $elParent.appendChild($elParent.replaceChild($elClone, $el));
           $el.classList.add(className);
 

@@ -44,6 +44,7 @@ mobileMenu = function(_) {
         if (forSwipe || !e || (e.type === 'keyup' && e.keyCode === 27 || target === menu || target === closeBtn)) {
           menu.classList.remove('active');
           openBtn.classList.remove('active');
+          menu.removeEventListener('touchstart', swipeStart);
 
           if (!fade) {
             setMenuStyles(initialTransformX, '.5s');
@@ -142,12 +143,11 @@ mobileMenu = function(_) {
         if (!allowPageScroll) {
           pageScroll(false);
         }
-        console.log('sticky hdr');
-        sticky(hdr);
       } else {
         menu.isOpened = opened = true;
         openBtn.removeEventListener('click', openMenu);
         closeBtn.addEventListener('click', closeMenu);
+        menu.addEventListener('touchstart', swipeStart);
       }
     },
     init = function() {
@@ -167,7 +167,7 @@ mobileMenu = function(_) {
         toRight = toLeft = false;
       } else {
         setMenuStyles(initialTransformX, 0);
-        menu.addEventListener('touchstart', swipeStart);
+        // menu.addEventListener('touchstart', swipeStart);
       }
       menu.isOpened = false;
     },
@@ -282,6 +282,7 @@ mobileMenu = function(_) {
       open: openMenu,
       close: closeMenu,
       destroy: destroy,
+      init: init,
       opened: opened
     };
   }

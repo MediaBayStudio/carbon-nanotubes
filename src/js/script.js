@@ -33,13 +33,13 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   // menu.open();
 
-  // let navLinks = qa('.nav-link, .hdr__callback');
+  let navLinks = qa('.nav-link[href*="#"]');
 
-  // for (let i = 0, len = navLinks.length; i < len; i++) {
-  // navLinks[i].addEventListener('click', scrollToTarget);
-  // }
+  for (let i = 0, len = navLinks.length; i < len; i++) {
+    navLinks[i].addEventListener('click', scrollToTarget);
+  }
 
-  // sticky(hdr);
+  sticky(hdr);
 
   // thanksPopup = new Popup('.thanks', {
   // closeButtons: '.thanks__close'
