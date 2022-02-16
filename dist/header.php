@@ -12,19 +12,11 @@ global
   $tiktok,
   $site_url,
   $logo_url,
+  $social_media_links,
   $template_directory,
   $template_directory_uri;
 
 $current_template = $GLOBALS['current_template'];
-
-$social_media_links = [
-  'telegram' => $telegram,
-  'twitter' => $twitter,
-  'reddit' => $reddit,
-  'youtube' => $youtube,
-  'facebook' => $facebook,
-  'tiktok' => $tiktok
-];
 
 $preload = [ 
   [
@@ -83,7 +75,7 @@ $GLOBALS['page_style_name'] = $style_name ?>
 <!DOCTYPE html>
 <html <?php language_attributes() ?>>
 <head>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=CustomEvent%2CIntersectionObserver%2CIntersectionObserverEntry%2CElement.prototype.closest%2CElement.prototype.dataset%2CHTMLPictureElement"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=ResizeObserver%2CCustomEvent%2CIntersectionObserver%2CIntersectionObserverEntry%2CElement.prototype.closest%2CElement.prototype.dataset%2CHTMLPictureElement"></script>
   <meta charset="<?php bloginfo('charset') ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">

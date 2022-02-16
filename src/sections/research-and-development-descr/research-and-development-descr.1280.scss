@@ -3,6 +3,13 @@
 @import '../../scss/assets/variables';
 
 .rd-descr {
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  &.lazyloaded,
+  &:not(.lazy) {
+    background-image: url('../img/rd-descr-section-bg-desktop.svg');
+  }
 
   &__title {
     margin: 0 0 50px;
@@ -10,5 +17,12 @@
 
   &__text {
     max-width: 600px;
+  }
+
+  &__pic {
+    margin: 0;
+    position: absolute;
+    bottom: -20px;
+    right: calc(50vw - 665px);
   }
 }

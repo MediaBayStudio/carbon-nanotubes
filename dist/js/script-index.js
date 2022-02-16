@@ -70,6 +70,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //=include ../sections/index-contacts/index-contacts.js
 
+;(function() {
+  thanksPopup = new Popup('.thanks-popup', {
+    closeButtons: '.thanks-popup__btn'
+  });
+})();
+
+;(function() {
+  errorPopup = new Popup('.error-popup', {
+    closeButtons: '.error-popup__btn'
+  });
+})();
+
 //=include ../sections/footer/footer.js
 
 });

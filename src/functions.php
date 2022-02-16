@@ -27,6 +27,15 @@ $youtube = get_option( 'contacts_youtube' );
 $facebook = get_option( 'contacts_facebook' );
 $tiktok = get_option( 'contacts_tiktok' );
 
+$social_media_links = [
+  'telegram' => $telegram,
+  'twitter' => $twitter,
+  'reddit' => $reddit,
+  'youtube' => $youtube,
+  'facebook' => $facebook,
+  'tiktok' => $tiktok
+];
+
 // $logo_id = get_theme_mod( 'custom_logo' );
 $logo_url = "{$template_directory_uri}/img/logo.svg";
 

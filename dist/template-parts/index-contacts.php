@@ -1,4 +1,4 @@
-<section class="index-contacts container sect">
+<section class="index-contacts container sect lazy" data-src="#">
   <span class="index-contacts__top-text sect-top-text"><?php echo $section['upper_text'] ?></span>
   <h2 class="index-contacts__title sect-title"><?php echo $section['title'] ?></h2> <?php
   echo do_shortcode( '[contact-form-7 id="' . $section['form'] . '" html_class="index-contacts__form" html_id="contact-form"]' ) ?>

@@ -16,6 +16,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //=include ../sections/index-contacts/index-contacts.js
 
+//=include ../sections/thanks-popup/thanks-popup.js
+
+//=include ../sections/error-popup/error-popup.js
+
 //=include ../sections/footer/footer.js
 
 });

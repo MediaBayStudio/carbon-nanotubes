@@ -1,1 +1,1 @@
-@charset "UTF-8";.rd-descr__title{margin:0 0 50px}.rd-descr__text{max-width:600px}
+@charset "UTF-8";.rd-descr{background-position:center;background-size:cover;position:relative}.rd-descr.lazyloaded,.rd-descr:not(.lazy){background-image:url(../img/rd-descr-section-bg-desktop.svg)}.rd-descr__title{margin:0 0 50px}.rd-descr__text{max-width:600px}.rd-descr__pic{margin:0;position:absolute;bottom:-20px;right:calc(50vw - 665px)}

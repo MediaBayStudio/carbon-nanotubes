@@ -3,13 +3,14 @@
 @import '../../scss/assets/variables';
 
 .rd-hero {
-
+  padding-bottom: $sectionVerticalPadding1280;
   &__top-text {
   }
 
   &__title {
     margin: 0 0 60px;
     font-size: 64px;
+    text-transform: uppercase;;
   }
 
   &__text {

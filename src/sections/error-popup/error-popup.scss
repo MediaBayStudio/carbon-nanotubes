@@ -1,3 +1,28 @@
 @import '../../scss/assets/colors';
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
+
+
+.error-popup {
+  align-items: center;
+
+  &__cnt {
+    max-width: 325px;
+  }
+
+  &__close {
+  }
+
+  &__status-icon {
+  }
+
+  &__title {
+  }
+
+  &__descr {
+  }
+
+  &__btn {
+    text-transform: uppercase;
+  }
+}

@@ -35,7 +35,10 @@
     font: 600 16px/1.5 $mainFont;
     text-transform: uppercase;
     cursor: pointer;
-    @include gradient-text('hover');
+    transition: color .5s;
+    &:hover {
+      color: $violet;
+    }
   }
 
   &__item-arrow {

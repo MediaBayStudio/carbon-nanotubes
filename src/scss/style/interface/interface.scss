@@ -138,6 +138,26 @@ body {
   &-descr {}
 }
 
+
+.telegram,
+.twitter,
+.reddit,
+.youtube,
+.facebook,
+.tiktok {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  background: center / contain no-repeat;
+  transition: filter .5s;
+  &:nth-last-child(n+2) {
+    margin: 0 10px 0 0;
+  }
+  &:hover {
+    filter: brightness(1.25);
+  }
+}
+
 .telegram {
   &.lazyloaded,
   &:not(.lazy) {

@@ -2,3 +2,12 @@
 @import '../../assets/colors';
 @import '../../assets/mixins';
 @import '../../assets/variables';
+
+.popup {
+  &__title {
+    font-size: 48px;
+  }
+  &__descr {
+    max-width: 350px;
+  }
+}

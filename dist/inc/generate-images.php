@@ -48,7 +48,7 @@ function generate_webp( $image_meta, $img_id ) {
 
   $upload_dir = preg_replace( '/.*uploads/', '', $dirname );
 
-  foreach ( $image_sizes as $size_name ) {
+  foreach ( $image_sizes as $size_name => $dimensions ) {
     $file = image_get_intermediate_size( $img_id, $size_name );
     $file_webp = str_replace( ['.jpg', '.jpeg', '.png'], '', $file['file'] );
     $file_webp_name = $file_webp . '.webp';
@@ -81,7 +81,7 @@ function generate_webp( $image_meta, $img_id ) {
 }
 
 
-function minifyImg( $src, $dest = null, $quality = 9 ) {
+function minify_img( $src, $dest = null, $quality = 9 ) {
   if ( is_null( $dest ) ) {
     $dest = $src;
   }
