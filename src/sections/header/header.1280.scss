@@ -6,6 +6,12 @@
   padding-top: 55px;
   // padding-bottom: 55px;
   font-size: 18px;
+  &.fixed {
+    padding-bottom: 10px;
+    .hdr__logo-img {
+      height: 40px;
+    }
+  }
   
   &__logo {
   }

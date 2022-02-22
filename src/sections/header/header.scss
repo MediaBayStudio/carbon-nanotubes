@@ -17,8 +17,9 @@
     width: 100%;
     z-index: 1;
     animation: translateToBottom 1s;
-    .hdr__logo {
-      display: none;
+    .hdr__logo-img {
+      height: 30px;
+      // display: none;
     }
     .hdr__burger {
       margin: 0 0 0 auto;

@@ -10,8 +10,9 @@
   }
 
   &__burger {
+     
     &:active {
-    }
+    } 
     &.lazyloaded,
     &:not(.lazy) {
     }
@@ -19,4 +20,4 @@
 
   &__nav {
   }
-}
+} 

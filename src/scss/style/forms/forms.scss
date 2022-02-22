@@ -159,6 +159,10 @@ p.invalid {
       // border-bottom-color: $error;
     }
 
+    &__textarea {
+      height: auto;
+    }
+
     &:focus,
     &.filled {
       // &.valid {

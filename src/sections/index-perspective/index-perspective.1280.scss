@@ -39,50 +39,41 @@
   &__item {
     margin: 120px 0 0;
     align-items: center;
+
     &:first-child {
       .index-perspective__item-pic {
-        position: relative;
-        &::after {
-          content: '';
-          position: absolute;
+        &::before {
+          display: block;
           bottom: 0;
           left: 80px;
           width: 65px;
           height: 65px;
-          background: center / contain no-repeat;
-          transform: translate(0, 50%);
-          animation: swayingLeft 4s .5s infinite ease-in-out;
-          transform-origin: 50% 100% 0;
-        }
-        &.lazyloaded,
-        &:not(.lazy) {
-          &::after {
-            background-image: url('../img/ball.webp');
-          }
         }
       }
     }
 
     &:nth-child(2) {
       .index-perspective__item-pic {
-        position: relative;
         &::before {
-          content: '';
-          position: absolute;
+          display: block;
           top: -150px;
           left: 50%;
           width: 45px;
           height: 45px;
-          background: center / contain no-repeat;
-          transform: translate(0, 50%);
-          animation: swayingRight 4s 2.5s infinite ease-in-out;
-          transform-origin: 50% 100% 0;
+          animation-delay: 2s;
         }
-        &.lazyloaded,
-        &:not(.lazy) {
-          &::before {
-            background-image: url('../img/ball.webp');
-          }
+      }
+    }
+
+    &:nth-child(3) {
+      .index-perspective__item-pic {
+        &::before {
+          display: block;
+          bottom: -75px;
+          left: 5%;
+          width: 45px;
+          height: 45px;
+          animation-delay: 4s;
         }
       }
     }
@@ -90,7 +81,23 @@
     &-pic {
       flex-shrink: 0;
       width: 590px;
-      height: 420px;      
+      height: 420px;
+      position: relative;
+      &::before {
+        content: '';
+        display: none;
+        position: absolute;
+        background: center / contain no-repeat;
+        transform: translate(0, 50%);
+        animation: swayingLeft 4s .5s infinite ease-in-out;
+        transform-origin: 50% 100% 0;
+      }
+      &.lazyloaded,
+      &:not(.lazy) {
+        &::before {
+          background-image: url('../img/ball.webp');
+        }
+      }
     }
 
     &-img {}
