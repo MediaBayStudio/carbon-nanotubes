@@ -1,11 +1,12 @@
 <section class="index-hero container">
-  <picture class="index-hero__pic">
-    <source type="image/webp" media="(max-width:767.98px)" srcset="<?php echo "{$template_directory_uri}/img/index-hero-img.576.webp, {$template_directory_uri}/img/index-hero-img.576@2x.webp 2x" ?>">
-    <source type="image/png" media="(max-width:767.98px)" srcset="<?php echo "{$template_directory_uri}/img/index-hero-img.576.png, {$template_directory_uri}/img/index-hero-img.576@2x.png 2x" ?>">
-    <source type="image/webp" media="(min-width:767.98px)" srcset="<?php echo "{$template_directory_uri}/img/index-hero-img.1440.webp, {$template_directory_uri}/img/index-hero-img.1440@2x.webp 2x" ?>">
-    <source type="image/png" media="(min-width:767.98px)" srcset="<?php echo "{$template_directory_uri}/img/index-hero-img.1440.png, {$template_directory_uri}/img/index-hero-img.1440@2x.png 2x" ?>">
-    <img src="<?php echo "{$template_directory_uri}/img/index-hero-img.576.png" ?>" alt="carbon molecule" class="index-hero__img">
-  </picture>
+  <video src="<?php echo $template_directory_uri ?>/index-hero-video.mp4" class="index-hero__video" playsinline autoplay muted loop></video>
+  <!-- <picture class="index-hero__pic">
+    <source type="image/webp" media="(max-width:767.98px)" srcset="<?php #echo "{$template_directory_uri}/img/index-hero-img.576.webp, {$template_directory_uri}/img/index-hero-img.576@2x.webp 2x" ?>">
+    <source type="image/png" media="(max-width:767.98px)" srcset="<?php #echo "{$template_directory_uri}/img/index-hero-img.576.png, {$template_directory_uri}/img/index-hero-img.576@2x.png 2x" ?>">
+    <source type="image/webp" media="(min-width:767.98px)" srcset="<?php #echo "{$template_directory_uri}/img/index-hero-img.1440.webp, {$template_directory_uri}/img/index-hero-img.1440@2x.webp 2x" ?>">
+    <source type="image/png" media="(min-width:767.98px)" srcset="<?php #echo "{$template_directory_uri}/img/index-hero-img.1440.png, {$template_directory_uri}/img/index-hero-img.1440@2x.png 2x" ?>">
+    <img src="<?php #echo "{$template_directory_uri}/img/index-hero-img.576.png" ?>" alt="carbon molecule" class="index-hero__img">
+  </picture> -->
   <div class="index-hero__text">
     <span class="index-hero__top-text sect-top-text"><?php echo $section['upper_text'] ?></span>
     <h1 class="index-hero__title"><?php echo $section['title'] ?></h1>

@@ -36,19 +36,24 @@ if ( is_front_page() ) {
     'url' => "{$template_directory_uri}/img/icon-arrow-download.svg"
   ];
 
-  $images_extname = $webp_support ? '.webp' : '.png';
-  
   $preload[] = [
-    'url' => "{$template_directory_uri}/img/index-hero-img.576{$images_extname}",
-    'media' => '(max-width:767.98px)',
-    'imagesrcset' => "{$template_directory_uri}/img/index-hero-img.576@2x{$images_extname} 2x"
+    'url' => "{$template_directory_uri}/index-hero-video.mp4",
+    'as' => 'video'
   ];
 
-  $preload[] = [
-    'url' => "{$template_directory_uri}/img/index-hero-img.1440{$images_extname}",
-    'media' => '(min-width:767.98px)',
-    'imagesrcset' => "{$template_directory_uri}/img/index-hero-img.1440@2x{$images_extname} 2x"
-  ];
+  // $images_extname = $webp_support ? '.webp' : '.png';
+  
+  // $preload[] = [
+  //   'url' => "{$template_directory_uri}/img/index-hero-img.576{$images_extname}",
+  //   'media' => '(max-width:767.98px)',
+  //   'imagesrcset' => "{$template_directory_uri}/img/index-hero-img.576@2x{$images_extname} 2x"
+  // ];
+
+  // $preload[] = [
+  //   'url' => "{$template_directory_uri}/img/index-hero-img.1440{$images_extname}",
+  //   'media' => '(min-width:767.98px)',
+  //   'imagesrcset' => "{$template_directory_uri}/img/index-hero-img.1440@2x{$images_extname} 2x"
+  // ];
 
 } else if ( is_404() ) {
   $script_name = '';

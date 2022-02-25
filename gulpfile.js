@@ -9,6 +9,10 @@ let { src, dest, watch, series, parallel, task } = require('gulp'),
   fs = require('fs'),
   argv = require('yargs').argv,
   mkdirpsync = require('mkdirpsync'),
+  colors = require('colors'),
+
+  watchcss = require('./scripts/watch/watch-css.js'),
+  buildcss = require('./scripts/build/build-css.js'),
 
   shell = require('gulp-shell'),
 
@@ -72,7 +76,7 @@ let { src, dest, watch, series, parallel, task } = require('gulp'),
   moveJs = require('./scripts/move/move-js.js'),
 
   buildJs = require('./scripts/watch/build-js.js'),
-  buildCss = require('./scripts/watch/build-css.js'),
+  buildCss = require('./scripts/build/build-css.js'),
 
   createPage = require('./scripts/create-page.js');
 
@@ -80,10 +84,10 @@ let { src, dest, watch, series, parallel, task } = require('gulp'),
 task('start', series(createStartCatalogs, start));
 task('wp', series(createStartCatalogs, buildWordpress));
 
-task('createblock', function(cb) {
+task('createcomponent', function(cb) {
   let newPath = argv.src;
   if (newPath.constructor !== Boolean) {
-    createBlock(newPath);
+    createBlock(newPath, 'component');
   }
   cb();
 });
@@ -146,6 +150,88 @@ task('renameblock', function(cb) {
 
 task('createpage', createPage);
 
+
+// function buildCSS(filepath, event) {
+//   let parsedPath = path.parse(filepath),
+//     pagesInfo = path.join(config.dest.path, 'pages-info.json'),
+//     date = new Date(),
+//     startDate = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds(),
+//     endDate,
+//     timeDiff;
+
+//   console.log('  [' + startDate.grey + ']' + ' Starting \'' + 'buildCSS'.blue + '\'...');
+
+//   if (event === 'change') {
+//     console.log('    ' + filepath + ' has been modified'.green);
+
+//     try {
+//       pagesInfo = JSON.parse(fs.readFileSync(pagesInfo).toString());
+//       let updateStyles = [],
+//         mediaRegExp = /\.[0-9]+/,
+//         styleMedia = parsedPath.name.match(mediaRegExp); // .1024
+
+//       for (let pageName in pagesInfo) {
+//         let pageStyles = pagesInfo[pageName];
+
+//         if (pageStyles.indexOf(parsedPath.name.replace(mediaRegExp, '')) !== -1) {
+//           let styleName = 'style-' + pageName + (styleMedia ? styleMedia[0] : '') + '.scss',
+//             stylePath = path.join(config.src.scss, styleName);
+//           updateStyles[updateStyles.length] = stylePath;
+//         }
+//       }
+
+//       if (updateStyles.length > 0) {
+//         buildCss(null, updateStyles);
+//         updateStyles.forEach(style => console.log('      ' + style + ' has been updated'.green));
+//       }
+
+//     } catch (err) {
+//       console.log(pagesInfo + ' not found'.red);
+//       return;
+//     }
+
+//   } else if (event === 'unlink') {
+
+//   }
+//   endDate = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+
+//   timeDiff = Date.parse(new Date()) - Date.parse(date) + '';
+
+//   console.log('  [' + endDate.grey + ']' + ' Finished \'' + 'buildCSS'.blue + '\' after ' + timeDiff.yellow + ' ms'.yellow);
+// }
+
+// task('watchcss', function(cb) {
+//   const paths = {
+//     sections: path.join(config.src.sections, '**', '*.scss'),
+//     themeStyle: path.join(config.src.path, 'style.scss'),
+//     components: path.join(config.src.components, '**', '*.scss')
+//   };
+
+// for (const key in paths) {
+//   watch(paths[key])
+//     .on('add', filepath => buildCSS('add', filepath, key))
+//     .on('change', filepath => buildCSS('change', filepath, key))
+//     .on('unlink', filepath => buildCSS('unlink', filepath, key));
+// }
+
+//   // watch(paths.sections)
+//   //   .on('add', filepath => buildCSS('add', filepath, 'sections'))
+//   //   .on('change', filepath => buildCSS('change', filepath, 'sections'))
+//   //   .on('unlink', filepath => buildCSS('unlink', filepath, 'sections'));
+
+//   // watch(paths.sections)
+//   //   .on('add', filepath => buildCSS('add', filepath, 'themeStyle'))
+//   //   .on('change', filepath => buildCSS('change', filepath, 'themeStyle'))
+//   //   .on('unlink', filepath => buildCSS('unlink', filepath, 'themeStyle')); 
+
+//   // watch(paths.components)
+//   //   .on('add', filepath => buildCSS('add', filepath, 'components'))
+//   //   .on('change', filepath => buildCSS('change', filepath, 'components'))
+//   //   .on('unlink', filepath => buildCSS('unlink', filepath, 'components')); 
+
+//   cb();
+// });
+
 task('default', function(done) {
   // moveSource(); // Перемещаем исходный код
   if (wordpress) {
@@ -155,12 +241,12 @@ task('default', function(done) {
     watch(path.join(config.src.js, 'script.js'), buildJs);
     watch(path.join(config.src.js, 'script-admin.js'), buildJs);
 
-    watch(path.join(config.src.path, 'style.scss'), buildCss);
-    watch(path.join(config.src.scss, 'style-admin.scss'), buildCss);
-    watch(path.join(config.src.components, '**', '*.scss'), buildCss);
-    watch(path.join(config.src.sections, '**', '*.scss'), buildCss);
+    // watch(path.join(config.src.path, 'style.scss'), buildCss);
+    // watch(path.join(config.src.scss, 'style-admin.scss'), buildCss);
+    // watch(path.join(config.src.components, '**', '*.scss'), buildCss);
+    // watch(path.join(config.src.sections, '**', '*.scss'), buildCss);
     // watch(config.src.scss + '**/*.scss', buildCss);
-    watch(path.join(config.src.scss, '**', '!(style-)*.scss'), buildCss);
+    // watch(path.join(config.src.scss, '**', '!(style-)*.scss'), buildCss);
 
     watch(path.join(config.src.components, '**', '*.php'), moveBlocks);
     watch(path.join(config.src.sections, '**', '*.php'), moveSections);
@@ -235,3 +321,5 @@ task('moveall', parallel(
   'moveimg',
   'movefavicons',
   'movejson'));
+
+task('watchcss', watchcss);

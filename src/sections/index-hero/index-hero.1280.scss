@@ -3,18 +3,26 @@
 @import '../../scss/assets/variables';
 
 .index-hero {
-  padding-top: 140px;
+  // padding-top: 140px;
   display: flex;
   flex-flow: row-reverse;
-  overflow: hidden;
-  &__pic {
-    margin: -180px -120px 0 0;
-    flex-shrink: 0;
-    width: 775px;
-    pointer-events: none;
+  // overflow: hidden;
+  &::before {
+    // top: -125px;
   }
+  &__video {
+    // top: -125px;
+    object-position: center;
+  }
+  // &__pic {
+  //   margin: -180px -120px 0 0;
+  //   flex-shrink: 0;
+  //   width: 775px;
+  //   pointer-events: none;
+  // }
 
   &__text {
+    // transform: translateX(-30px);
   }
 
   &__top-text {
