@@ -2,6 +2,16 @@
 @import '../../scss/assets/mixins';
 @import '../../scss/assets/variables';
 
+
+.page-template-index {
+  .hdr:not(.fixed) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
+
 .hdr {
   padding-top: 18px;
   // padding-bottom: 18px;
@@ -9,10 +19,6 @@
   align-items: center;
   // background: $black;
   z-index: 1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
   
   &.fixed {
     padding-top: 10px;

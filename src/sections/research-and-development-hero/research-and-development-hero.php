@@ -6,5 +6,5 @@
       <p class="rd-hero__descr"><?php echo $descr['text'] ?></p> <?php
     endforeach ?>
   </div>
-  <div class="rd-hero__media"></div>
+  <video src="<?php echo $template_directory_uri ?>/index-hero-video.mp4" class="rd-hero__media" controls></video>
 </section>

@@ -12,7 +12,7 @@
     <h1 class="index-hero__title"><?php echo $section['title'] ?></h1>
     <p class="index-hero__descr"><?php echo $section['descr'] ?></p>
     <div class="index-hero__links">
-      <a href="https://google.com" class="index-hero__link btn btn-gradient" target="_blank">Change the world</a>
+      <a href="https://google.com" class="index-hero__link btn btn-ol-gradient" target="_blank">Change the world</a>
       <a href="<?php echo "{$site_url}/whitepaper.pdf" ?>" class="index-hero__link btn btn-grey btn-whitepaper" target="_blank">Whitepaper</a>
     </div>
   </div>
